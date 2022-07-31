@@ -1,12 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>title</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+<!-- saved from url=(0076)chrome-extension://njgpoifkefbbhjohcadcngdomfifcflj/src/timetable/table.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Timetable |</title>
+    <style type="text/css">
+      @font-face {
+      font-family:"Title";
+      src: url("./fonts/open-sans-light.ttf") format("truetype");
+      }
+      html {
+        background-color: #1f2739;
+      }
+      .main-heading {
+        font-family: Title;
+        font-size: 2.5rem;
+        text-align: center;
+        color: #3ebefa;
+      }
+      table {
+        font-family: Title;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-size: 1.2rem;
+        border-collapse: collapse;
+      }
+      td {
+        border: 0.3px solid gray;
+        padding: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+      #legend {
+        margin-top: 20px;
+      }
+      .differentColor {
+        color: #f8f842;
+      }
+      #AI3001:hover span{
+        display:none
+      }
+      #AI3001:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+      #AI3000:hover span{
+        display:none
+      }
+      #AI3000:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+      #CS3510:hover span{
+        display:none
+      }
+      #CS3510:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+      #CS2323:hover span{
+        display:none
+      }
+      #CS2323:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+      #MA5060:hover span{
+        display:none
+      }
+      #MA5060:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+      #EE2101:hover span{
+        display:none
+      }
+      #EE2101:hover::before{
+        content: "A-LH1";
+        color:rgb(0,255,234);
+      }
+
+    </style>
   </head>
   <body>
-    Sorry! This page is currently blank!
-  </body>
-</html>
+    <p class="main-heading">Your Timetable</p>
+    <table border="1" id="timetable">
+      <tbody><tr>
+        <td class="differentColor">Day</td>
+        <td class="differentColor">Segment</td>
+        <td class="differentColor">09:00-09:55</td>
+        <td class="differentColor">10:00-10:55</td>
+        <td class="differentColor">11:00-11:55</td>
+        <td class="differentColor">12:00-12:55</td>
+        <td class="differentColor">Lunch Break</td>
+        <td class="differentColor">14:30-15:55</td>
+        <td class="differentColor">16:00-17:25</td>
+        <td class="differentColor">17:30-18:55</td>
+        <td class="differentColor">19:00-20:30</td>
+      </tr>
+      <tr class="Monday-1">
+        <td rowspan="3" class="differentColor">Monday</td>
+        <td>1</td>
+        <td class="1-1-1" id='EE2101'><span>EE2101</span></td>
+        <td class="1-1-2"></td>
+        <td class="1-1-3" id='MA5060'><span>MA5060</span></td>
+        <td class="1-1-4"></td>
+        <td></td>
+        <td class="1-1-5"></td>
+        <td class="1-1-6" id='AI3001'><span>AI3001</span></td>
+        <td class="1-1-7"></td>
+        <td class="1-1-8"></td>
+      </tr>
+      <tr class="Monday-2">
+        <td>2</td>
+        <td class="1-2-1" id='EE2101'><span>EE2101</span></td>
+        <td class="1-2-2"></td>
+        <td class="1-2-3" id='MA5060'><span>MA5060</span></td>
+        <td class="1-2-4"></td>
+        <td></td>
+        <td class="1-2-5" id='CS2323'><span>CS2323</span></td>
+        <td class="1-2-6" id='AI3001'><span>AI3001</span></td>
+        <td class="1-2-7"></td>
+        <td class="1-2-8"></td>
+      </tr>
+      <tr class="Monday-3">
+        <td>3</td>
+        <td class="1-3-1" id='EE2101'><span>EE2101</span></td>
+        <td class="1-3-2"></td>
+        <td class="1-3-3" id='MA5060'><span>MA5060</span></td>
+        <td class="1-3-4"></td>
+        <td></td>
+        <td class="1-3-5" id='CS2323'><span>CS2323</span></td>
+        <td class="1-3-6"></td>
+        <td class="1-3-7"></td>
+        <td class="1-3-8"></td>
+      </tr>
+      <tr class="Tuesday-1">
+        <td rowspan="3" class="differentColor">Tuesday</td>
+        <td>1</td>
+        <td class="2-1-1"></td>
+        <td class="2-1-2"></td>
+        <td class="2-1-3"></td>
+        <td class="2-1-4"></td>
+        <td></td>
+        <td class="2-1-5" id='AI3000'><span>AI3000</span></td>
+        <td class="2-1-6"></td>
+        <td class="2-1-7"></td>
+        <td class="2-1-8"></td>
+      </tr>
+      <tr class="Tuesday-2">
+        <td>2</td>
+        <td class="2-2-1"></td>
+        <td class="2-2-2"></td>
+        <td class="2-2-3"></td>
+        <td class="2-2-4"></td>
+        <td></td>
+        <td class="2-2-5" id='AI3000'><span>AI3000</span></td>
+        <td class="2-2-6"></td>
+        <td class="2-2-7"></td>
+        <td class="2-2-8"></td>
+      </tr>
+      <tr class="Tuesday-3">
+        <td>3</td>
+        <td class="2-3-1"></td>
+        <td class="2-3-2" id='CS3510'><span>CS3510</span></td>
+        <td class="2-3-3"></td>
+        <td class="2-3-4"></td>
+        <td></td>
+        <td class="2-3-5" id='AI3000'><span>AI3000</span></td>
+        <td class="2-3-6"></td>
+        <td class="2-3-7"></td>
+        <td class="2-3-8"></td>
+      </tr>
+      <tr class="Wednesday-1">
+        <td rowspan="3" class="differentColor">Wednesday</td>
+        <td>1</td>
+        <td class="3-1-1"></td>
+        <td class="3-1-2" id='MA5060'><span>MA5060</span></td>
+        <td class="3-1-3" id='EE2101'><span>EE2101</span></td>
+        <td class="3-1-4"></td>
+        <td></td>
+        <td class="3-1-5"></td>
+        <td class="3-1-6"></td>
+        <td class="3-1-7"></td>
+        <td class="3-1-8"></td>
+      </tr>
+      <tr class="Wednesday-2">
+        <td>2</td>
+        <td class="3-2-1"></td>
+        <td class="3-2-2" id='MA5060'><span>MA5060</span></td>
+        <td class="3-2-3" id='EE2101'><span>EE2101</span></td>
+        <td class="3-2-4"></td>
+        <td></td>
+        <td class="3-2-5"></td>
+        <td class="3-2-6"></td>
+        <td class="3-2-7"></td>
+        <td class="3-2-8"></td>
+      </tr>
+      <tr class="Wednesday-3">
+        <td>3</td>
+        <td class="3-3-1"></td>
+        <td class="3-3-2" id='MA5060'><span>MA5060</span></td>
+        <td class="3-3-3" id='EE2101'><span>EE2101</span></td>
+        <td class="3-3-4"></td>
+        <td></td>
+        <td class="3-3-5"></td>
+        <td class="3-3-6"></td>
+        <td class="3-3-7"></td>
+        <td class="3-3-8"></td>
+      </tr>
+      <tr class="Thursday-1">
+        <td rowspan="3" class="differentColor">Thursday</td>
+        <td>1</td>
+        <td class="4-1-1" id='MA5060'><span>MA5060</span></td>
+        <td class="4-1-2" id='EE2101'><span>EE2101</span></td>
+        <td class="4-1-3"></td>
+        <td class="4-1-4"></td>
+        <td></td>
+        <td class="4-1-5" id='AI3001'><span>AI3001</span></td>
+        <td class="4-1-6"></td>
+        <td class="4-1-7"></td>
+        <td class="4-1-8"></td>
+      </tr>
+      <tr class="Thursday-2">
+        <td>2</td>
+        <td class="4-2-1" id='MA5060'><span>MA5060</span></td>
+        <td class="4-2-2" id='EE2101'><span>EE2101</span></td>
+        <td class="4-2-3"></td>
+        <td class="4-2-4"></td>
+        <td></td>
+        <td class="4-2-5" id='AI3001'><span>AI3001</span></td>
+        <td class="4-2-6" id='CS2323'><span>CS2323</span></td>
+        <td class="4-2-7"></td>
+        <td class="4-2-8"></td>
+      </tr>
+      <tr class="Thursday-3">
+        <td>3</td>
+        <td class="4-3-1" id='MA5060'><span>MA5060</span></td>
+        <td class="4-3-2" id='EE2101'><span>EE2101</span></td>
+        <td class="4-3-3"></td>
+        <td class="4-3-4" id='CS3510'><span>CS3510</span></td>
+        <td></td>
+        <td class="4-3-5"></td>
+        <td class="4-3-6" id='CS2323'><span>CS2323</span></td>
+        <td class="4-3-7"></td>
+        <td class="4-3-8"></td>
+      </tr>
+      <tr class="Friday-1">
+        <td rowspan="3" class="differentColor">Friday</td>
+        <td>1</td>
+        <td class="5-1-1"></td>
+        <td class="5-1-2"></td>
+        <td class="5-1-3"></td>
+        <td class="5-1-4"></td>
+        <td></td>
+        <td class="5-1-5"></td>
+        <td class="5-1-6" id='AI3000'><span>AI3000</span></td>
+        <td class="5-1-7"></td>
+        <td class="5-1-8"></td>
+      </tr>
+      <tr class="Friday-2">
+        <td>2</td>
+        <td class="5-2-1"></td>
+        <td class="5-2-2"></td>
+        <td class="5-2-3"></td>
+        <td class="5-2-4"></td>
+        <td></td>
+        <td class="5-2-5"></td>
+        <td class="5-2-6" id='AI3000'><span>AI3000</span></td>
+        <td class="5-2-7"></td>
+        <td class="5-2-8"></td>
+      </tr>
+      <tr class="Friday-3">
+        <td>3</td>
+        <td class="5-3-1" id='CS3510'><span>CS3510</span></td>
+        <td class="5-3-2"></td>
+        <td class="5-3-3"></td>
+        <td class="5-3-4"></td>
+        <td></td>
+        <td class="5-3-5"></td>
+        <td class="5-3-6" id='AI3000'><span>AI3000</span></td>
+        <td class="5-3-7"></td>
+        <td class="5-3-8"></td>
+      </tr>
+    </tbody></table>
+    <table border="1" id="legend">
+      <tbody><tr>
+          <td class="differentColor">Course Code</td>
+          <td class="differentColor">Course</td>
+      </tr>
+      <tr>
+  
+    <td class="Coursecode" id='AI3000'><span>AI3000</span></td>
+    <td class="coursename">Reinforcement Learning</td>
+  </tr><tr>
+  
+    <td class="Coursecode" id='AI3001'><span>AI3001</span></td>
+    <td class="coursename">Advanced Topics in ML</td>
+  </tr><tr>
+  
+    <td class="Coursecode" id='CS2323'><span>CS2323</span></td>
+    <td class="coursename">Computer Architecture</td>
+  </tr><tr>
+  
+    <td class="Coursecode" id='CS3510'><span>CS3510</span></td>
+    <td class="coursename">Operating Systems I</td>
+  </tr><tr>
+  
+    <td class="Coursecode" id='EE2101'><span>EE2101</span></td>
+    <td class="coursename">Control Systems</td>
+  </tr><tr>
+
+      <td class="Coursecode" id='MA5060'><span>MA5060</span></td>
+      <td class="coursename">Numerical Analysis</td>
+  </tr></tbody><tbody></tbody>
+    </table>
+</body></html>
