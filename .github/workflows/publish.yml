@@ -16,10 +16,26 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+                        ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.97.3
+          hugo-version: 'latest'
           extended: true
 
       - name: Build
@@ -27,8 +43,6 @@ jobs:
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
-        permissions:
-          id-token: write
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
