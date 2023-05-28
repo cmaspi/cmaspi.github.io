@@ -126,15 +126,9 @@ menu:
       weight: 20
     - identifier: example
       name: BLOG
-      url: https://github.com/cmaspi
+      url: https://cmaspi.github.io
       weight: 30
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
