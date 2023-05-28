@@ -116,13 +116,17 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: posts
+      name: posts
+      url: /posts/
       weight: 10
     - identifier: tags
       name: tags
       url: /tags/
+      weight: 20
+    - identifier: search
+      name: search
+      url: /search
       weight: 20
     - identifier: example
       name: BLOG
@@ -132,3 +136,9 @@ pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
