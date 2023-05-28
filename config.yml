@@ -117,15 +117,19 @@ params:
 menu:
   main:
     - identifier: posts
-      name: posts
+      name: " Posts"
       url: /posts/
       weight: 10
+    - identifier: archive
+      name: Archive
+      url: /archive
+      weight: 10
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
       weight: 20
     - identifier: search
-      name: search
+      name: Search
       url: /search
       weight: 20
     - identifier: example
