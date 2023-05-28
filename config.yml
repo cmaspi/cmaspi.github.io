@@ -58,10 +58,10 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
+    enabled: true # needs to be explicitly set
+    title: स्वागत
+    subtitle: "wtf: WhatTensorFlow"
+    imageUrl: "https://avatars.githubusercontent.com/u/69354325?v=4"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
