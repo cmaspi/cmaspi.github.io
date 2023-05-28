@@ -1,42 +1,30 @@
-# This is a basic workflow to help you get started with Actions
-
-name: publish
-
-# Controls when the workflow will run
+name: GitHub Pages
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches:
+      - main
+permissions:
+  contents: write
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.97.3/hugo_extended_0.97.3_Linux-64bit.deb \
-          && sudo dpkg -i hugo.deb
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v1
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
 
-      # Runs a single command using the runners shell
-      - name: Build with hugo
-        run: hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.97.3
+          extended: true
 
-      # Runs a set of commands using the runners shell
+      - name: Build
+        run: hugo --minify --gc --enableGitInfo
+
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
