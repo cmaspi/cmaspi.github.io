@@ -25,7 +25,7 @@ During training the batch-propagation needs to go through the batch statistics a
 # Disentangling the benefits of BN
 [This paper](https://arxiv.org/pdf/1806.02375.pdf) provides evidence that batch normalization enables the use of higher learning rates which mediates the majority of its benefits.
 The authors train the ResNet model without batch normalization with a learning rate of $ 0.0001$ . The model requires 2400 epochs for convergence. They then train the ResNet model now with batch normalization with a learning rate of $ 0.003$ which requires 1320 epochs for convergence. They also train this model with a learning rate of $ 0.0001$ and it performs no better than the unnormalized network. They also train the two models with a learning rate of $ 0.1$. The unnormalized network shows a large difference in train and test accuracy, indicating more overfitting.
-![[training.png]]
+![b](training.png)
 
 ## Learning rate and generalization
 The gradient step for SGD is
