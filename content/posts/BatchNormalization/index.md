@@ -37,53 +37,47 @@ $$\mathbb{E}\left[\frac{\alpha}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x))\
 However, the gradient estimate will be noisy. Define a noisy quantity C of a single gradient estimate such that $ C=\mathbb{E}\left[\|{\nabla l_i(x) - \nabla l(x)}\|^2\right]$
 We will try to find an upper bound for the noise term in terms of $ C$ and mini-batch size $ B$ and the learning rate $ \alpha$.
 
-{{< math >}}
 $$
 \begin{align}
 \mathbb{E}\left[\left\|\frac{1}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x))\right\|^2\right] \label{eq:main}
 \end{align}
 $$
-{{< \math >}}
 
 Define $ \Delta_i = \nabla l_i(x)-\nabla l(x)$ , and take $ \gamma_i$ to be an indicator variable equal to one if example i is in batch B and zero otherwise.
 \eqref{eq:main}
 $$ (1) = \frac{1}{|B|^2} \mathbb{E}\left[\sum_{i=1}^N\sum_{j=1}^N\gamma_i\gamma_j\Delta_i^T\Delta_j\right]$$
 Let us defined $ b=|B|$. Since samples are drawn independently we have
 
-{{< math >}}
 $$
 \begin{align}
-\mathbb{E}[\gamma_i\gamma_i] &= \frac{b}{N} \\
+\mathbb{E}[\gamma_i\gamma_i] &= \frac{b}{N} \newline
 \mathbb{E}[\gamma_i\gamma_j] &= \frac{b^2}{N^2}
 \end{align}
 $$
-{{< \math >}}
 
-{{< math >}}
 $$
 \begin{align}
-(1) &= \frac{1}{b^2}\mathbb{E}\left[\frac{b^2}{N^2}\sum_{i\neq j}\Delta_I^T\Delta_j + \frac{b}{N}\sum_{i=1}^{N}\|\Delta_i\|^2\right] \\
+(1) &= \frac{1}{b^2}\mathbb{E}\left[\frac{b^2}{N^2}\sum_{i\neq j}\Delta_I^T\Delta_j + \frac{b}{N}\sum_{i=1}^{N}\|\Delta_i\|^2\right] \newline
 &= \frac{1}{bN}\mathbb{E}\left[\frac{b}{N}\sum_{i,j}\Delta_i^T\Delta_j+\left(1-\frac{b}{N}\right)\sum_{i=1}^N\|\Delta_i\|^2\right]
 \end{align}
 $$
-{{< \math >}}
 
 Since the gradient estimate is unbiased, the first term vanishes.
-{{< math >}}
 $$
 \begin{align}
 (1) = \frac{N-b}{bN^2}\mathbb{E}\left[\sum_{i=1}^N\|\Delta_i\|^2\right] = \frac{N-b}{bN}\mathbb{E}\left[\frac{1}{N}\sum_{i=1}^N\|\Delta_i\|^2\right] \leq \frac{C}{b}
 \end{align}
 $$
-{{< \math >}}
 
 So, we can upper-bond the noise of the gradient step estimate given by SGD as
-	$$
+
+$$
 \mathbb{E}\left[\left\|\alpha\nabla l(x)-\alpha\nabla_{SGD}(x)\right\|^2\right]\leq\frac{\alpha^2}{|B|}C
 $$
 Depending on the tightness of this bound, it suggests that the noise should reduce is the mini-batch size is increased.
 
 # Batch Normalization and Divergence
+
 The authors compared the gradients between batch normalized and unnormalized networks in the initial epochs, they found that the gradients of comparable parameters are larger and distributed with heavier trails in the unnormalized networks.
 ![b](heavy_tailed.png)
 
