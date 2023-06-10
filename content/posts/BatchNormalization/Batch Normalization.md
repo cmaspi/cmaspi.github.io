@@ -2,6 +2,7 @@
 title: "Understanding Batch Normalization"
 date: 2023-06-10T23:00:22+05:30
 draft: false
+math: true
 ---
 
 ## The Batch Normalization Algorithm
