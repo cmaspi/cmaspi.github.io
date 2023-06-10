@@ -10,7 +10,18 @@
       <link>https://cmaspi.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://cmaspi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Jun 2023 23:00:22 +0530</lastBuildDate><atom:link href="https://cmaspi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Main</title>
+      <link>https://cmaspi.github.io/posts/batchnormalization/batch-normalization/</link>
+      <pubDate>Sat, 10 Jun 2023 23:00:22 +0530</pubDate>
+      
+      <guid>https://cmaspi.github.io/posts/batchnormalization/batch-normalization/</guid>
+      <description>The Batch Normalization Algorithm Both the input and the output of a BN layer are four dimensional tensors. Call them $\LARGE I_{b,c,x,y}$ and $\LARGE O_{b,c,x,y}$. BN applies the same normalization for all activations in a given channel.
+$$\LARGE O_{b,c,x,y} \leftarrow \gamma_c \frac{I_{b,c,x,y}-\mu_c}{\sqrt{\sigma_c^2+\epsilon}}+\beta_c\quad \forall, b,c,x,y$$ Here $$\LARGE \mu_c = \dfrac{1}{|\mathcal{B}|}\sum_{b,x,y}I_{b,c,x,y}$$ where $\LARGE \mathcal{B}$ contains all activations in channel $\Large c$ across all feature $\Large b$ in the entire mini-batch and all spatial $\LARGE x,y$ locations.</description>
+    </item>
+    
     
     
   </channel>
