@@ -14,10 +14,10 @@
     <lastBuildDate>Sat, 10 Jun 2023 23:00:22 +0530</lastBuildDate><atom:link href="https://cmaspi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Batch Normalization</title>
-      <link>https://cmaspi.github.io/posts/batchnormalization/batch-normalization/</link>
+      <link>https://cmaspi.github.io/posts/batchnormalization/</link>
       <pubDate>Sat, 10 Jun 2023 23:00:22 +0530</pubDate>
       
-      <guid>https://cmaspi.github.io/posts/batchnormalization/batch-normalization/</guid>
+      <guid>https://cmaspi.github.io/posts/batchnormalization/</guid>
       <description>The Batch Normalization Algorithm Both the input and the output of a BN layer are four dimensional tensors. Call them $ I_{b,c,x,y}$ and $ O_{b,c,x,y}$. BN applies the same normalization for all activations in a given channel.
 $$ O_{b,c,x,y} \leftarrow \gamma_c \frac{I_{b,c,x,y}-\mu_c}{\sqrt{\sigma_c^2+\epsilon}}+\beta_c\quad \forall, b,c,x,y$$ Here $$ \mu_c = \dfrac{1}{|\mathcal{B}|}\sum_{b,x,y}I_{b,c,x,y}$$ where $ \mathcal{B}$ contains all activations in channel $ c$ across all feature $ b$ in the entire mini-batch and all spatial $ x,y$ locations.</description>
     </item>
