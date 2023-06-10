@@ -30,8 +30,8 @@ The authors train the ResNet model without batch normalization with a learning r
 ## Learning rate and generalization
 The gradient step for SGD is
 $$\displaystyle\alpha\nabla_{SGD}(x) = \frac{\alpha}{|B|} \sum_{i\in B}\nabla l_i(x)$$
-Subtract and add $ \alpha\nabla l(x)$ 
-$$\displaystyle\alpha\nabla_{SGD}(x) = \underbracket{\alpha\nabla l(x)}_\text{gradient} + \underbracket{\frac{\alpha}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x))}_\text{noise term}$$
+Subtract and add $\alpha\nabla l(x)$
+$$\displaystyle\alpha\nabla_{SGD}(x) = {\alpha\nabla l(x)} + {\frac{\alpha}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x))}$$
 The gradient estimate is unbiased because
 $$\mathbb{E}\left[\frac{\alpha}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x))\right] = 0$$
 However, the gradient estimate will be noisy. Define a noisy quantity C of a single gradient estimate such that $ C=\mathbb{E}\left[\|{\nabla l_i(x) - \nabla l(x)}\|^2\right]$
@@ -40,20 +40,18 @@ $$\mathbb{E}\left[\left\|\frac{1}{|B|} \sum_{i\in B}(\nabla l_i(x) - \nabla l(x)
 Define $ \Delta_i = \nabla l_i(x)-\nabla l(x)$ , and take $ \gamma_i$ to be an indicator variable equal to one if example i is in batch B and zero otherwise.
 $$ (1) = \frac{1}{|B|^2} \mathbb{E}\left[\sum_{i=1}^N\sum_{j=1}^N\gamma_i\gamma_j\Delta_i^T\Delta_j\right]$$
 Let us defined $ b=|B|$. Since samples are drawn independently we have
-$$
+
 \begin{align}
-
-\mathbb{E}[\gamma_i\gamma_i] &= \frac{b}{N}\\
-
+\mathbb{E}[\gamma_i\gamma_i] &= \frac{b}{N} \\
 \mathbb{E}[\gamma_i\gamma_j] &= \frac{b^2}{N^2}
 \end{align}
-$$
-$$
+
+
 \begin{align}
 (1) &= \frac{1}{b^2}\mathbb{E}\left[\frac{b^2}{N^2}\sum_{i\neq j}\Delta_I^T\Delta_j + \frac{b}{N}\sum_{i=1}^{N}\|\Delta_i\|^2\right]\\
 &= \frac{1}{bN}\mathbb{E}\left[\frac{b}{N}\sum_{i,j}\Delta_i^T\Delta_j+\left(1-\frac{b}{N}\right)\sum_{i=1}^N\|\Delta_i\|^2\right]
 \end{align}
-$$
+
 Since the gradient estimate is unbiased, the first term vanishes.
 $$
 \begin{align}
@@ -68,10 +66,10 @@ Depending on the tightness of this bound, it suggests that the noise should redu
 
 # Batch Normalization and Divergence
 The authors compared the gradients between batch normalized and unnormalized networks in the initial epochs, they found that the gradients of comparable parameters are larger and distributed with heavier trails in the unnormalized networks.
-![[Pasted image 20230610223736.png]]
+![b](heavy_tailed.png)
 
 Further, the authors define network divergence as the point when the loss of a mini-batch increases beyond $10^3$ (a point from which networks have never managed to recover to acceptable accuracies in their experiments)
-![[Pasted image 20230610224437.png]]
+![b](Pasted image 20230610224437.png)
 The authors infer from these experiments that batch-normalization enables the use of higher learning rate.
 To further demonstrate unstable nature of unnormalized networks, the authors show the means and variance of channels in three layers (8, 44, 80) on the unnormalized network during an update which causes the loss to shoot up a lot.
 
