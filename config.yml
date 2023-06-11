@@ -59,8 +59,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: स्वागत
-    subtitle: "wtf: WhatTensorFlow"
+    title: "wtf: WhatTensorFlow"
+    subtitle: "Hi, this is Chirag. I'm documenting my learning (AI) journey through these blogs. These blogs are not a substitute to reading actual research papers."
     imageUrl: "https://avatars.githubusercontent.com/u/69354325?v=4"
     imageWidth: 120
     imageHeight: 120
@@ -73,6 +73,7 @@ params:
 
   # home-info mode
   homeInfoParams:
+    enabled: true
     Title: "Hi there \U0001F44B"
     Content: Welcome to my blog
 
@@ -122,7 +123,7 @@ menu:
       weight: 10
     - identifier: archive
       name: Archive
-      url: /archive
+      url: /archive/
       weight: 10
     - identifier: tags
       name: Tags
@@ -146,3 +147,4 @@ outputs:
         - HTML
         - RSS
         - JSON # is necessary
+
